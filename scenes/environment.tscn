@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqbjrgubg2ajw"]
+
+[ext_resource type="PackedScene" uid="uid://bhr6dl6kov6cf" path="res://scenes/stage_background.tscn" id="1_bc5iu"]
+[ext_resource type="PackedScene" uid="uid://vounkr0fh8ti" path="res://scenes/ui_score_bar_left.tscn" id="2_d5dl1"]
+[ext_resource type="PackedScene" uid="uid://rgyvjt4s5qw6" path="res://scenes/ui_score_bar_right.tscn" id="3_hlc4h"]
+
+[node name="Environment" type="Node2D"]
+
+[node name="Stage_Background" parent="." instance=ExtResource("1_bc5iu")]
+scale = Vector2(1.98355, 1.98355)
+
+[node name="UI_ScoreBar_Left" parent="." instance=ExtResource("2_d5dl1")]
+position = Vector2(335, 64)
+
+[node name="UI_ScoreBar_Right" parent="." instance=ExtResource("3_hlc4h")]
+position = Vector2(1245, 64)

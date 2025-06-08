@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhr6dl6kov6cf"]
+
+[ext_resource type="Texture2D" uid="uid://bgo4ti3gdjof" path="res://assets/Board.png" id="1_vj1tt"]
+
+[node name="Stage_Background" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 802.0
+offset_bottom = 455.0
+texture = ExtResource("1_vj1tt")
+expand_mode = 2

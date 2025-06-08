@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://cuqoxuydxc2gi"]
+
+[ext_resource type="PackedScene" uid="uid://dqbjrgubg2ajw" path="res://scenes/environment.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://cmnoo7os2u5j2" path="res://scenes/player.tscn" id="2_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://cqgqm3dge1l4" path="res://scenes/enemy.tscn" id="3_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://ccmjxdpr1503a" path="res://scenes/ball.tscn" id="4_tefeu"]
+
+[node name="main" type="Node2D"]
+
+[node name="Environment" parent="." instance=ExtResource("1_o5qli")]
+texture_filter = 1
+position = Vector2(-4.00012, -3.00006)
+scale = Vector2(0.808351, 0.808351)
+
+[node name="Player" parent="." instance=ExtResource("2_jyhfs")]
+position = Vector2(22, 361)
+
+[node name="Enemy" parent="." instance=ExtResource("3_tbgi4")]
+position = Vector2(1255, 370)
+
+[node name="Ball" parent="." instance=ExtResource("4_tefeu")]
+position = Vector2(639, 351)

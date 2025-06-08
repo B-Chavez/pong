@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://vounkr0fh8ti"]
+
+[ext_resource type="Texture2D" uid="uid://bsk7l573all30" path="res://assets/ScoreBar.png" id="1_begfj"]
+[ext_resource type="FontFile" uid="uid://b8snab5vwxpev" path="res://assets/fonts/Teko-VariableFont_wght.ttf" id="2_j3tci"]
+
+[node name="UI_ScoreBar_Left" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_begfj")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+offset_left = -105.0
+offset_top = -25.0
+offset_right = 51.0
+offset_bottom = 26.0
+theme_override_fonts/font = ExtResource("2_j3tci")
+theme_override_font_sizes/font_size = 35
+text = "Player 1 Score : 0"
