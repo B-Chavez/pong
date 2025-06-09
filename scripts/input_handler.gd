@@ -12,7 +12,7 @@ func _physics_process(delta: float) -> void:
 	var dir := Vector2(
 		0, 
 		# get_action_stength() receives a value from 0 to 1 for each press, these are mainly for analog and triggers
-		Input.get_action_strength("moveUp") - Input.get_action_strength("moveDown")
+		Input.get_action_strength("moveDown") - Input.get_action_strength("moveUp")
 	)
 	if dir != Vector2.ZERO: #if dir is not set at 0,0 then run below
 		dir = dir.normalized() #Keeps diagonal inputs from being faster than up,down,left,right inputs

@@ -1,22 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://cmnoo7os2u5j2"]
+[gd_scene load_steps=6 format=3 uid="uid://cmnoo7os2u5j2"]
 
 [ext_resource type="Texture2D" uid="uid://c6nlfpoo6wa3j" path="res://assets/Player.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://baniqi1qctp5c" path="res://scripts/player.gd" id="1_dqkch"]
 [ext_resource type="Script" uid="uid://d17i46df1a3f" path="res://scripts/input_handler.gd" id="2_g2els"]
+[ext_resource type="PackedScene" uid="uid://d3qhcbgewqvgo" path="res://scenes/movement_controller.tscn" id="4_qlg0r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
 size = Vector2(18, 120)
 
-[node name="Player" type="Node2D"]
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_dqkch")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 texture = ExtResource("1_3vyb7")
 flip_h = true
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-shape = SubResource("RectangleShape2D_g2els")
-
 [node name="InputHandler" type="Node" parent="."]
 script = ExtResource("2_g2els")
+
+[node name="MovementController" parent="." instance=ExtResource("4_qlg0r")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_g2els")
