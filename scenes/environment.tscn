@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://dqbjrgubg2ajw"]
+[gd_scene load_steps=6 format=3 uid="uid://dqbjrgubg2ajw"]
 
 [ext_resource type="PackedScene" uid="uid://bhr6dl6kov6cf" path="res://scenes/stage_background.tscn" id="1_bc5iu"]
 [ext_resource type="PackedScene" uid="uid://vounkr0fh8ti" path="res://scenes/ui_score_bar_left.tscn" id="2_d5dl1"]
 [ext_resource type="PackedScene" uid="uid://rgyvjt4s5qw6" path="res://scenes/ui_score_bar_right.tscn" id="3_hlc4h"]
+[ext_resource type="PackedScene" uid="uid://24huojr8fdki" path="res://scenes/wall_verticle.tscn" id="4_0psjf"]
+[ext_resource type="PackedScene" uid="uid://djiobquwtiwq2" path="res://scenes/wall_horizontal.tscn" id="5_yw8f4"]
 
 [node name="Environment" type="Node2D"]
 
@@ -14,3 +16,14 @@ position = Vector2(335, 64)
 
 [node name="UI_ScoreBar_Right" parent="." instance=ExtResource("3_hlc4h")]
 position = Vector2(1245, 64)
+
+[node name="Wall_Verticle" parent="." instance=ExtResource("4_0psjf")]
+position = Vector2(0, -1)
+
+[node name="Wall_Verticle2" parent="." instance=ExtResource("4_0psjf")]
+position = Vector2(1592, -1)
+
+[node name="Wall_Horizontal" parent="." instance=ExtResource("5_yw8f4")]
+
+[node name="Wall_Horizontal2" parent="." instance=ExtResource("5_yw8f4")]
+position = Vector2(0, 902)
