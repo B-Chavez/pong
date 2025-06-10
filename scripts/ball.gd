@@ -11,10 +11,18 @@ func _ready() -> void:
 	#Vector2.RIGHT Face your character right, then rotate in a random 360 deg
 	#then move your ball at that speed
 
+#WHenever the physics engine steps forward it gives each RigidBody2D a chance to inspect
+#and tweak it's own simulation state. By default this func is called before Godot applies
+#gravity, forces, and collisions for that frame, so whatever you do here will be included in the
+#upcoming physics solve
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	# ensure we keep exactly 'speed' magitude
-	var lv = state.get_linear_velocity()
+	# the type of "state" is PhysicsDirectBodyState2D
+	# gives you direct access to the body's physics internals for this exact frame:
+	# velocity, forces, transform, mass, etc.
+	var lv = state.get_linear_velocity() #reads the body's current velocity vector (in pixels/sec)
 	if lv != Vector2.ZERO:
+		#Overwrites the body's current velocity vector for the next physics solve
 		state.set_linear_velocity(lv.normalized() * speed)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
