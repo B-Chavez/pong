@@ -17,6 +17,7 @@ position = Vector2(22, 361)
 
 [node name="Enemy" parent="." instance=ExtResource("3_tbgi4")]
 position = Vector2(1255, 370)
+ball_path = NodePath("../Ball")
 
 [node name="Ball" parent="." instance=ExtResource("4_tefeu")]
 position = Vector2(639, 351)
