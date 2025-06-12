@@ -1,12 +1,13 @@
-extends CharacterBody2D
+extends RigidBody2D
 
 @export var speed : float = 400.0 #Speed of ball, can change in inspector
 
-var contact_monitor = true
-var contacts_reported = 4
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	contact_monitor = true
+	max_contacts_reported = 4
 	#Serve the ball
 	#random initial direction
 	var angle = randf() * TAU #randf() returns a float 0.0 to 1.0, then you multiply it by TAU(PI * 2) which gives you 360 degrees by it self
