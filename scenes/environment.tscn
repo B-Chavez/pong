@@ -18,12 +18,12 @@ position = Vector2(335, 64)
 position = Vector2(1245, 64)
 
 [node name="Wall_Verticle" parent="." instance=ExtResource("4_0psjf")]
-position = Vector2(0, -1)
+position = Vector2(1, 0)
 
 [node name="Wall_Verticle2" parent="." instance=ExtResource("4_0psjf")]
-position = Vector2(1592, -1)
+position = Vector2(1589, -1)
 
 [node name="Wall_Horizontal" parent="." instance=ExtResource("5_yw8f4")]
 
 [node name="Wall_Horizontal2" parent="." instance=ExtResource("5_yw8f4")]
-position = Vector2(0, 902)
+position = Vector2(0, 901)
