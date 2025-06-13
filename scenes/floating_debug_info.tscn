@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://chtyngfa2ok4c"]
+
+[ext_resource type="Script" uid="uid://ha1r4d66byxo" path="res://scripts/floating_debug_info.gd" id="1_myt2j"]
+
+[node name="Floating Debug Info" type="CanvasLayer"]
+script = ExtResource("1_myt2j")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Linear Velocity: 0
+Position (x,y): 0,0
+Contacts: 0"

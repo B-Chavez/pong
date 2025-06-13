@@ -30,7 +30,7 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	# velocity, forces, transform, mass, etc.
 	var lv = state.get_linear_velocity() #reads the body's current velocity vector (in pixels/sec)
 	var dir: Vector2
-	if lv.length() > 0.001:
+	if lv.length() > 0.001: #ensures speed is constant
 		dir = lv.normalized()
 		#Overwrites the body's current velocity vector for the next physics solve
 		state.set_linear_velocity(dir * speed)
@@ -39,7 +39,7 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	for i in range(cnt):
 		var collider = state.get_contact_collider_object(i)
 		#If player paddle is hit
-		if collider is CharacterBody2D:
+		if collider is RigidBody2D:
 			#grab collision normal at contact
 			var normal = state.get_contact_local_normal(i)
 			#reflect lv and re-scale
