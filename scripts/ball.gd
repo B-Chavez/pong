@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 @export var speed : float = 400.0 #Speed of ball, can change in inspector
-
+var _impact_recorded: bool
 
 
 # Called when the node enters the scene tree for the first time.
@@ -44,8 +44,17 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 			var normal = state.get_contact_local_normal(i)
 			#reflect lv and re-scale
 			lv = lv.bounce(normal).normalized() * speed
+	
+	_captureFirstContact(state)
 			
 	state.set_linear_velocity(lv)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+	
+func _captureFirstContact(stateagain: PhysicsDirectBodyState2D):
+	if stateagain.get_contact_count() > 0 :
+		_impact_recorded = true
+		# 0 = first contact
+		var world_pos = stateagain.get_contact_collider_position(0)
+		print("Impact X: ", world_pos.x)
