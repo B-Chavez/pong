@@ -4,6 +4,7 @@ extends RigidBody2D
 var _impact_recorded: bool
 
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	contact_monitor = true
@@ -58,3 +59,7 @@ func _captureFirstContact(stateagain: PhysicsDirectBodyState2D):
 		# 0 = first contact
 		var world_pos = stateagain.get_contact_collider_position(0)
 		print("Impact X: ", world_pos.x)
+
+
+func _on_body_entered(body: Node) -> void:
+	pass # Replace with function body.
