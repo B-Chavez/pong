@@ -4,6 +4,9 @@ class_name player
 @onready var input_handler = $InputHandler
 @onready var movement_ctrl = $MovementController
 
+@onready var playerHold_x: float = 0.0
+@onready var playerNode: Node2D = $"."
+@onready var getplayer_x: float = playerNode.position.x
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,4 +17,5 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	playerNode.position.x = getplayer_x
 	pass
