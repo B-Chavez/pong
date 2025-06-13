@@ -39,6 +39,6 @@ func _predict_ball_y() -> float:
 	#map proj_y into repeated (0..2*range) domain
 	var y = fposmod(proj_y - top_limit, limitedrange * 2)
 	#if it's in the "bounce" half, flip it back down
-	if y > range:
+	if y > limitedrange:
 		y = limitedrange * 2 - y
 	return	 y + top_limit

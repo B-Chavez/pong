@@ -9,6 +9,7 @@
 size = Vector2(18, 120)
 
 [node name="Player" type="RigidBody2D"]
+lock_rotation = true
 script = ExtResource("1_dqkch")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://cuqoxuydxc2gi"]
+[gd_scene load_steps=6 format=3 uid="uid://cuqoxuydxc2gi"]
 
 [ext_resource type="PackedScene" uid="uid://dqbjrgubg2ajw" path="res://scenes/environment.tscn" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://cmnoo7os2u5j2" path="res://scenes/player.tscn" id="2_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://cqgqm3dge1l4" path="res://scenes/enemy.tscn" id="3_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://ccmjxdpr1503a" path="res://scenes/ball.tscn" id="4_tefeu"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_jyhfs"]
+friction = 0.0
 
 [node name="main" type="Node2D"]
 
@@ -14,9 +17,12 @@ scale = Vector2(0.808351, 0.808351)
 
 [node name="Player" parent="." instance=ExtResource("2_jyhfs")]
 position = Vector2(22, 361)
+physics_material_override = SubResource("PhysicsMaterial_jyhfs")
+gravity_scale = 0.0
 
 [node name="Enemy" parent="." instance=ExtResource("3_tbgi4")]
 position = Vector2(1255, 370)
+ball_path = NodePath("../Ball")
 
 [node name="Ball" parent="." instance=ExtResource("4_tefeu")]
 position = Vector2(639, 351)
